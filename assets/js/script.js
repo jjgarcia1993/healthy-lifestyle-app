@@ -1,3 +1,5 @@
+//--------------GLOBAL VARIABLES--------------------------
+
 //spotify secret credentials
 var client_id = '';
 var client_secret = '';
@@ -5,10 +7,17 @@ var client_secret = '';
 //get auth button for testing
 var getAuthButton = $("#get-auth-token-btn");
 
+//test api call button for testing
+var testApiButton = $("#test-api-call");
+
+
+//----------------FUNCTIONS----------------------
+
 //get spotify access token
 var getSpotifyAcessToken = function () {
-    //object that contains the info to make the request
- 
+    
+    
+    //NEED TO ADD ERROR HANDLING FOR THIS TOKEN REQUEST
     fetch('https://accounts.spotify.com/api/token', {
         method: 'POST',
         headers: {
@@ -26,22 +35,24 @@ var getSpotifyAcessToken = function () {
     });
 };
 
+//test API call
+var testApiCall = function(){
+    fetch('https://api.spotify.com/v1/search?q=workout&type=playlist',{
+        method: 'GET',
+        headers: {
+            'Authorization': 'Bearer '+localStorage.getItem('spotifyTempToken'),
+            'Content-Type':'application/json'
+        }
+    })
+    .then((response) => {return response.json()})
+    .then((response) => {
+        console.log(response);
+    });
+};
 
 
-
-
-
-    
-
-
-//     request.post(authOptions, function (error, response, body) {
-//         //if there is no error and status code is 200, return an access token
-//         if (!error && response.statusCode === 200) {
-//             var token = body.access_token;
-//         }
-//         console.log(token);
-//     });
-// };
+//---------------INITIALIZATIONS------------------
 
 
 getAuthButton.on("click", getSpotifyAcessToken);
+testApiButton.on("click", testApiCall);
