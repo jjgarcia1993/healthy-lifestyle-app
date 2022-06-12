@@ -1,8 +1,8 @@
 //--------------GLOBAL VARIABLES--------------------------
 
 //spotify secret credentials
-var client_id = '';
-var client_secret = '';
+const client_id = '';
+const client_secret = '';
 
 //get auth button for testing
 var getAuthButton = $("#get-auth-token-btn");
