@@ -47,25 +47,28 @@ var getSpotifyAcessToken = function () {
     })  
 };
 
-var createPlaylistCard = () => {
+
+//creates a card with the playlist info and appends it to the spotifyCardContainer
+var createPlaylistCard = (playlistObj) => {
     let cardEl = $("<div>").addClass("column is-one-quarter card m-2");
+    let deleteEl = $("<button>").addClass("delete");
     let cardHeaderEl = $("<header>").addClass("card-header")
-        .append($("<p>").addClass("card-header-title").text("Playlist Title Placeholder"));
+        .append($("<p>").addClass("card-header-title").text(playlistObj.name));
     let cardContentEl = $("<div>").addClass("card-content");
-    let descriptionEl = $("<p>").addClass("content").text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.");
+    let descriptionEl = $("<p>").addClass("content").text(playlistObj.description);
     let cardFooterEl = $("<footer>").addClass("card-footer");
-    let playlistLinkEl = $("<a>").addClass("card-footer-item").attr("href","http://open.spotify.com/").text("Link");
+    let playlistLinkEl = $("<a>").addClass("card-footer-item").attr("href",playlistObj.external_urls.spotify).text("Link");
 
     cardFooterEl.append(playlistLinkEl);
     cardContentEl.append(descriptionEl);
-    cardEl.append(cardHeaderEl, cardContentEl, cardFooterEl);
+    cardEl.append(deleteEl, cardHeaderEl, cardContentEl, cardFooterEl);
     spotifyCardContainerEl.append(cardEl);
 
 };
 
 //search for playlists
-var searchPlaylists = function(){
-    fetch('https://api.spotify.com/v1/search?q=workout&type=playlist',{
+var searchPlaylists = function(searchInput){
+    fetch('https://api.spotify.com/v1/search?q='+searchInput+'&type=playlist',{
         method: 'GET',
         headers: {
             'Authorization': 'Bearer '+localStorage.getItem('spotifyTempToken'),
@@ -80,11 +83,20 @@ var searchPlaylists = function(){
             return false;
         }  
     })
-    .then((response) => {
-        console.log(response);
+    .then((data) => {
+        let playlists = data.playlists.items;
+        for (let i = 0; i < 6; i++){
+            createPlaylistCard(playlists[i]);
+        }
     });
 };
 
+
+var searchHandler = () => {
+    $("#card-container").empty();
+    let searchInput = $("#spotify-search-input").val();
+    searchPlaylists(searchInput);
+};
 
 //---------------INITIALIZATIONS------------------
 
@@ -96,4 +108,4 @@ $("body").on("click", ".delete", function(){
     $(this).parent().remove();
 });
 
-$("#search-button").on("click",createPlaylistCard);
+$("#search-button").on("click",searchHandler);
