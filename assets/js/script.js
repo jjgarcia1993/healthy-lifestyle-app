@@ -98,6 +98,10 @@ var searchHandler = () => {
     searchPlaylists(searchInput);
 };
 
+var clearAllCards = () => {
+    $("#card-container").empty();
+};
+
 //---------------INITIALIZATIONS------------------
 
 //gets the spotify access token and displays a notification if successful
@@ -109,3 +113,4 @@ $("body").on("click", ".delete", function(){
 });
 
 $("#search-button").on("click",searchHandler);
+$("#clear-button").on("click",clearAllCards);
