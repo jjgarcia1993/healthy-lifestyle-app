@@ -5,18 +5,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Healthy Lifestyle App</title>
 </head>
 
 <body>
 
-    <div id="spotify-container">
-        <span id="spotify-response"></span>
-        <div id="spotify-button-container">
-            <button id="get-auth-token-btn">Get Token</button>
-            <button id="test-api-call">Test Api Call</button>
+    <header id="header" class="columns is-mobile box is-dark">
+        <nav id="navigation-bar" class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a href="/" class="navbar-item title is-3">Healthy Lifestyle App</a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                  </a>
+            </div>
+            <div id="navbar-item-container" class="navbar-menu">
+                <div class="navbar-start">
+                  <a class="navbar-item" href="#Link1">
+                    Link 1
+                  </a>
+
+                  <a class="navbar-item" href="#Link2">
+                   Link 2
+                  </a>
+                </div>
+                <div class="navbar-end">
+                    
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero" class="section">
+    
+    </section>
+    
+    <section id="spotify-container" class="section columns is-3">
+        <div id="spotify-search-container" class="column is-half">
+            <div id="spotify-response" class="block"></div>
+        <div id="spotify-search-input-container" class="block control">
+            <input type="text" id="spotify-search-input" class="input is-primary is-rounded" placeholder="Enter Keywords">
         </div>
-    </div>
+        <div id="spotify-button-container" class="buttons"><!-- <button class="button is-primary" id="get-auth-token-btn">Get Token</button> -->
+            <button class="button is-primary" id="test-api-call">Search for Playlist</button>
+        </div>
+        </div>
+        <div id="spotify-playlist-container" class="column is-half">
+            Placeholder
+        </div>
+    </section>
+
+    <footer id="footer" class="footer">
+        <div class="content has-text-centered">
+            <h2>Made by The GitGud Scrubs</h2>
+            <p>&copy; 2022 thegitgudscrubs</p>
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
