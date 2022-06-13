@@ -4,11 +4,8 @@
 const client_id = '0cb998c652e247539b3e6bb2e2c5cb93';
 const client_secret = 'ee5dae716eb44c48b3d235b1cf35fbab';
 
-//get auth button for testing
-var getAuthButton = $("#get-auth-token-btn");
-
-//test api call button for testing
-var testApiButton = $("#test-api-call");
+//Container Elements
+const spotifyCardContainerEl = $("#card-container");
 
 
 //----------------FUNCTIONS----------------------
@@ -50,8 +47,24 @@ var getSpotifyAcessToken = function () {
     })  
 };
 
-//test API call
-var testApiCall = function(){
+var createPlaylistCard = () => {
+    let cardEl = $("<div>").addClass("column is-one-quarter card m-2");
+    let cardHeaderEl = $("<header>").addClass("card-header")
+        .append($("<p>").addClass("card-header-title").text("Playlist Title Placeholder"));
+    let cardContentEl = $("<div>").addClass("card-content");
+    let descriptionEl = $("<p>").addClass("content").text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.");
+    let cardFooterEl = $("<footer>").addClass("card-footer");
+    let playlistLinkEl = $("<a>").addClass("card-footer-item").attr("href","http://open.spotify.com/").text("Link");
+
+    cardFooterEl.append(playlistLinkEl);
+    cardContentEl.append(descriptionEl);
+    cardEl.append(cardHeaderEl, cardContentEl, cardFooterEl);
+    spotifyCardContainerEl.append(cardEl);
+
+};
+
+//search for playlists
+var searchPlaylists = function(){
     fetch('https://api.spotify.com/v1/search?q=workout&type=playlist',{
         method: 'GET',
         headers: {
@@ -82,3 +95,5 @@ getSpotifyAcessToken();
 $("body").on("click", ".delete", function(){
     $(this).parent().remove();
 });
+
+$("#search-button").on("click",createPlaylistCard);
