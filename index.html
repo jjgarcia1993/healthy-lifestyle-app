@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,73 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Healthy Lifestyle App</title>
 </head>
+
 <body>
-    
+
+    <header id="header" class="columns is-mobile box is-dark">
+        <nav id="navigation-bar" class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a href="/" class="navbar-item title is-3">Healthy Lifestyle App</a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="navbar-item-container" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="#Link1">
+                        Link 1
+                    </a>
+
+                    <a class="navbar-item" href="#Link2">
+                        Link 2
+                    </a>
+                </div>
+                <div class="navbar-end">
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero" class="section">
+
+    </section>
+
+    <section id="spotify-container" class="section columns is-3">
+        <div id="spotify-search-container" class="column is-one-quarter mr-4">
+            <div id="spotify-response" class="block"></div>
+            <div id="spotify-search-input-container" class="block control">
+                <input type="text" id="spotify-search-input" class="input is-primary is-rounded"
+                    placeholder="Enter Keywords">
+            </div>
+            <div class="columns is-centered">
+                <div class="column"></div>
+                <div class="column is-flex is-flex-direction-column">
+                    <!-- <button class="button is-primary" id="get-auth-token-btn">Get Token</button> -->
+                    <button class="button is-primary mb-3" id="search-button">Search for Playlist</button>
+                    <button class="button is-warning mb-3" id="clear-button">Clear Results</button>
+                </div>
+                <div class="column"></div>
+            </div>
+        </div>
+        <div id="spotify-playlist-container" class="column is-three-quarters">
+            <div id="card-container" class="columns is-multiline"></div>
+        </div>
+    </section>
+
+    <footer id="footer" class="footer">
+        <div class="content has-text-centered">
+            <h2>Made by The GitGud Scrubs</h2>
+            <p>&copy; 2022 thegitgudscrubs</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
