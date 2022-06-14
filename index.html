@@ -11,39 +11,101 @@
 </head>
 
 <body>
-
-    <header id="header" class="columns is-mobile box is-dark">
-        <nav id="navigation-bar" class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a href="/" class="navbar-item title is-3">Healthy Lifestyle App</a>
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-                    data-target="navbarBasicExample">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
+   
+<!-- Still need to add flex and styling-->
+ 
+    <!-- Navigation Bar -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="https://bulma.io">
+            <img src="" width="112" height="28">
+          </a>
+      
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item">
+              About
+            </a>
+      
+            <a class="navbar-item">
+              Calorie Calculator
+            </a>
+      
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                More
+              </a>
+      
+              <div class="navbar-dropdown">
+                <a class="navbar-item">
+                  Calories to Burn
                 </a>
+                <a class="navbar-item">
+                  Workout Type
+                </a>
+              </div>
             </div>
-            <div id="navbar-item-container" class="navbar-menu">
-                <div class="navbar-start">
-                    <a class="navbar-item" href="#Link1">
-                        Link 1
-                    </a>
-
-                    <a class="navbar-item" href="#Link2">
-                        Link 2
-                    </a>
-                </div>
-                <div class="navbar-end">
-
-                </div>
+          </div>
+      
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-primary">
+                  <strong>Results</strong>
+                </a>
+              </div>
             </div>
-        </nav>
-    </header>
+          </div>
+        </div>
+      </nav>
 
-    <section id="hero" class="section">
 
+    <!-- Insert widget here-->
+
+
+
+    <!-- Hero/About the website-->
+    <section class="hero">
+        <div class="hero-cta">
+            <h2>What we do:</h2>
+            <p>
+                . 
+            </p>
+        </div>
     </section>
 
+    <!-- Input for for calories and workout type -->
+    <section>
+        <form>
+            <label for="name">Enter Your Name:</label>
+            <input type="text" placeholder="Your Name" name="name" id="name" class="form-input"/>
+            <label for="email">Enter email address:</label>
+            <input type="email" placeholder="Email Address" name="email" id="email" class="form-input"/>
+            <label for="phone">Enter a telephone number:</label>
+            <input type="tel" placeholder="Phone Number" name="phone" id="phone" class="form-input"/>
+            <p>
+                What type of workout are you looking to complete?
+                <span class="radio-wrapper">
+                  <input type="radio" name="trainer-confirm" id="trainer-yes" />
+                  <label for="trainer-yes">Cardio</label>
+                </span>
+                <span class="radio-wrapper">
+                  <input type="radio" name="trainer-confirm" id="trainer-no" />
+                  <label>Strength</label>
+                </span>
+              </p>
+            <button type="submit">
+                Show My Results!
+            </button>
+        </form>
+    </section>
     <section id="spotify-container" class="section columns is-3">
         <div id="spotify-search-container" class="column is-one-quarter mr-4">
             <div id="spotify-response" class="block"></div>
@@ -66,15 +128,18 @@
         </div>
     </section>
 
-    <footer id="footer" class="footer">
-        <div class="content has-text-centered">
-            <h2>Made by The GitGud Scrubs</h2>
+        <!--footer-->
+        <footer>
+            
+                 <div class="content has-text-centered">
+            <h2> Made by group 6: Moses, Miller, Jonathan, and Lee</h2>
             <p>&copy; 2022 thegitgudscrubs</p>
         </div>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+         
+        </footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
     <script src="./assets/js/script.js"></script>
 </body>
 
