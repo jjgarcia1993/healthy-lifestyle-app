@@ -71,30 +71,34 @@ var createPlaylistCard = (playlistObj) => {
 
 
 // Exercise card 
-var createPlaylistCard = (exerciseObj) => {
+var createExerciseCard = (exerciseObj) => {
     let cardEl = $("<div>").addClass("column is-one-quarter card m-2");
     let deleteEl = $("<button>").addClass("delete");
     let cardHeaderEl = $("<header>").addClass("card-header")
         .append($("<p>").addClass("card-header-title").text(exerciseObj.name));
     let cardContentEl = $("<div>").addClass("card-content");
-    let descriptionEl = $("<p>").addClass("content").text(exerciseObj.description);
+    let descriptionEl = $("<p>").addClass("content").html(exerciseObj.description);
     let cardFooterEl = $("<footer>").addClass("card-footer");
     let playlistLinkEl = $("<a>").addClass("card-footer-item").attr("href", 'https://wger.de/en/exercise/' + exerciseObj.id + '/view/').text("Link");
 
     cardFooterEl.append(playlistLinkEl);
     cardContentEl.append(descriptionEl);
     cardEl.append(deleteEl, cardHeaderEl, cardContentEl, cardFooterEl);
-
+    spotifyCardContainerEl.append(cardEl);
 };
 
 // Search for exercise
 var searchExercise = function (searchInput) {
-    fetch('https://wger.de/api/v2/exercise?category='+searchInput.id+'&language=2')
+    fetch('https://wger.de/api/v2/exercise?category=' + searchInput.id + '&language=2')
         .then(function (response) {
             return response.json()
         })
         .then(function (data) {
-            console.log('the date', data)
+            let exercises = data.results;
+            for (let i = 0; i < 6; i++) {
+                createExerciseCard(exercises[i]);
+            }
+            console.log(data)
         })
 };
 
