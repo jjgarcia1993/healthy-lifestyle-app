@@ -85,6 +85,7 @@
   <section class="section columns">
 
     <div id="form-container" class="p-3 column is-6">
+      <div id="spotify-response" class="block"></div>
       <div class="block">
         <label for="name">Enter Your Name:</label>
         <input type="text" placeholder="Your Name" name="name" id="user-name" class="input is-primary" />
@@ -107,54 +108,63 @@
 
       <div id="radio-container" class="control columns is-multiline p-3">
         <label for="" class="radio"></label>
-        <label class="radio column is-2"> <input type="radio" name="trainer-confirm" id="abs-radio" data-id="10"
+        <label class="radio column is-2"> <input type="radio" name="workout-type" id="abs-radio" data-id="10"
             data-name="abs" /> Abs</label>
-        <label class="radio column is-2"> <input type="radio" name="trainer-confirm" id="arms-radio" data-id="8"
+        <label class="radio column is-2"> <input type="radio" name="workout-type" id="arms-radio" data-id="8"
             data-name="arms" /> Arms</label>
-        <label class="radio column is-2"> <input type="radio" name="trainer-confirm" id="back-radio" data-id="12"
+        <label class="radio column is-2"> <input type="radio" name="workout-type" id="back-radio" data-id="12"
             data-name="back" /> Back</label>
-        <label class="radio column is-2"> <input type="radio" name="trainer-confirm" id="calves-radio" data-id="14"
+        <label class="radio column is-2"> <input type="radio" name="workout-type" id="calves-radio" data-id="14"
             data-name="calves" /> Calves</label>
-        <label class="radio column is-2"> <input type="radio" name="trainer-confirm" id="chest-radio" data-id="11"
+        <label class="radio column is-2"> <input type="radio" name="workout-type" id="chest-radio" data-id="11"
             data-name="chest" /> Chest</label>
-        <label class="radio column is-2"> <input type="radio" name="trainer-confirm" id="legs-radio" data-id="9"
+        <label class="radio column is-2"> <input type="radio" name="workout-type" id="legs-radio" data-id="9"
             data-name="legs" /> Legs</label>
-        <label class="radio column is-2"> <input type="radio" name="trainer-confirm" id="shoulders-radio" data-id="13"
+        <label class="radio column is-2"> <input type="radio" name="workout-type" id="shoulders-radio" data-id="13"
             data-name="shoulders" /> Shoulders</label>
 
       </div>
 
-
-      <button id="show-results-btn" class="button is-primary mb-3">
+      <div id="search-warning-container" class="block"></div>
+      <button id="show-results-btn" class="button is-primary">
         Show My Results!
       </button>
+      <button class="button is-warning block" id="clear-button">Clear Results</button>
+    </div>
+
+    <div id="workout-panel" class="column is-6">
+      <header id="your-workout-header" class="header block p-3"></header>
+      <div id="workout-card-container"></div>
     </div>
 
   </section>
 
-  <section id="workout-container" class="section columns is-3">
+  <section id="spotify-container" class="section">
 
-  </section>
+    <header id="your-playlist-header" class="header block p-3">
+    </header>
 
-  <section id="spotify-container" class="section columns is-3">
-    <div id="spotify-search-container" class="column is-one-quarter mr-4">
-      <div id="spotify-response" class="block"></div>
-      <div id="spotify-search-input-container" class="block control">
+    <div class="block"></div>
+
+    <div id="spotify-playlist-container" class="columns is-centered mt-5">
+      <div id="spotify-card-container" class="columns is-multiline"></div>
+    </div>
+    
+    <!-- <div id="spotify-search-container" class="column is-one-quarter mr-4"> -->
+      
+      <!-- <div id="spotify-search-input-container" class="block control">
         <input type="text" id="spotify-search-input" class="input is-primary is-rounded" placeholder="Enter Keywords">
       </div>
       <div class="columns is-centered">
         <div class="column"></div>
         <div class="column is-flex is-flex-direction-column">
-          <!-- <button class="button is-primary" id="get-auth-token-btn">Get Token</button> -->
           <button class="button is-primary mb-3" id="search-button">Search for Playlist</button>
           <button class="button is-warning mb-3" id="clear-button">Clear Results</button>
         </div>
         <div class="column"></div>
       </div>
-    </div>
-    <div id="spotify-playlist-container" class="column is-three-quarters">
-      <div id="card-container" class="columns is-multiline"></div>
-    </div>
+    </div> -->
+    
   </section>
 
   <!--footer-->
