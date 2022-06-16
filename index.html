@@ -18,7 +18,7 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item" href="https://bulma.io">
-            <img src="" width="112" height="28">
+            <img src="">
           </a>
       
           <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -31,33 +31,26 @@
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
             <a class="navbar-item">
-              About
+              About Us
             </a>
       
+            <!-- Calorie calculator widget to add later
             <a class="navbar-item">
               Calorie Calculator
             </a>
-      
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
-                More
+            -->
+
+            <a class="navbar-item">
+                Calories to Burn
               </a>
-      
-              <div class="navbar-dropdown">
-                <a class="navbar-item">
-                  Calories to Burn
-                </a>
-                <a class="navbar-item">
-                  Workout Type
-                </a>
-              </div>
+            
             </div>
           </div>
       
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
-                <a class="button is-primary">
+                <a class="resultsbtn">
                   <strong>Results</strong>
                 </a>
               </div>
@@ -67,29 +60,26 @@
       </nav>
 
 
-    <!-- Insert widget here-->
+    <!-- Insert widget after MVP presentation -->
 
 
 
     <!-- Hero/About the website-->
     <section class="hero">
         <div class="hero-cta">
-            <h2>What we do:</h2>
+            <h2>About Us:</h2>
             <p>
-                . 
+                We are a health based website for aspiring workout aficionados! Our goal is to help you lose weight by matching your desired calories burned with an exciting workout with music to match!
             </p>
+            <!-- Image credits to Active.com -->
         </div>
     </section>
 
     <!-- Input for for calories and workout type -->
     <section>
-        <form>
-            <label for="name">Enter Your Name:</label>
-            <input type="text" placeholder="Your Name" name="name" id="name" class="form-input"/>
-            <label for="email">Enter email address:</label>
-            <input type="email" placeholder="Email Address" name="email" id="email" class="form-input"/>
-            <label for="phone">Enter a telephone number:</label>
-            <input type="tel" placeholder="Phone Number" name="phone" id="phone" class="form-input"/>
+        <form class="calories-to-burn">
+            <label for="name">How many calories do you want to burn?</label>
+            <input type="text" placeholder="calories" name="name" id="name" class="form-input"/>
             <p>
                 What type of workout are you looking to complete?
                 <span class="radio-wrapper">
@@ -101,11 +91,12 @@
                   <label>Strength</label>
                 </span>
               </p>
-            <button type="submit">
+            <button type="submit" class="resultsbtn">
                 Show My Results!
             </button>
         </form>
     </section>
+
     <section id="spotify-container" class="section columns is-3">
         <div id="spotify-search-container" class="column is-one-quarter mr-4">
             <div id="spotify-response" class="block"></div>
@@ -131,7 +122,7 @@
         <!--footer-->
         <footer>
             
-                 <div class="content has-text-centered">
+            <div class="footer">
             <h2> Made by group 6: Moses, Miller, Jonathan, and Lee</h2>
             <p>&copy; 2022 thegitgudscrubs</p>
         </div>
