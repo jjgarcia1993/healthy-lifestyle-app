@@ -2,145 +2,174 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Healthy Lifestyle App</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Healthy Lifestyle App</title>
 </head>
 
 <body>
-   
-<!-- Still need to add flex and styling-->
- 
-    <!-- Navigation Bar -->
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="https://bulma.io">
-            <img src="" width="112" height="28">
+
+  <!-- Still need to add flex and styling-->
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand p-3">
+      <a class="navbar-item" href="/">
+        <img src="./assets/images/barbell.png" width="50">
+      </a>
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item">
+          About
+        </a>
+
+        <a class="navbar-item">
+          Calorie Calculator
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More
           </a>
-      
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-      
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
+
+          <div class="navbar-dropdown">
             <a class="navbar-item">
-              About
+              Calories to Burn
             </a>
-      
             <a class="navbar-item">
-              Calorie Calculator
+              Workout Type
             </a>
-      
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
-                More
-              </a>
-      
-              <div class="navbar-dropdown">
-                <a class="navbar-item">
-                  Calories to Burn
-                </a>
-                <a class="navbar-item">
-                  Workout Type
-                </a>
-              </div>
-            </div>
-          </div>
-      
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
-                <a class="button is-primary">
-                  <strong>Results</strong>
-                </a>
-              </div>
-            </div>
           </div>
         </div>
-      </nav>
+      </div>
 
-
-    <!-- Insert widget here-->
-
-
-
-    <!-- Hero/About the website-->
-    <section class="hero">
-        <div class="hero-cta">
-            <h2>What we do:</h2>
-            <p>
-                . 
-            </p>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary" href="https://github.com/jjgarcia1993/healthy-lifestyle-app" target="_blank">
+              <strong>GitHub</strong>
+            </a>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Input for for calories and workout type -->
-    <section>
-        <form>
-            <label for="name">Enter Your Name:</label>
-            <input type="text" placeholder="Your Name" name="name" id="name" class="form-input"/>
-            <label for="email">Enter email address:</label>
-            <input type="email" placeholder="Email Address" name="email" id="email" class="form-input"/>
-            <label for="phone">Enter a telephone number:</label>
-            <input type="tel" placeholder="Phone Number" name="phone" id="phone" class="form-input"/>
-            <p>
-                What type of workout are you looking to complete?
-                <span class="radio-wrapper">
-                  <input type="radio" name="trainer-confirm" id="trainer-yes" />
-                  <label for="trainer-yes">Cardio</label>
-                </span>
-                <span class="radio-wrapper">
-                  <input type="radio" name="trainer-confirm" id="trainer-no" />
-                  <label>Strength</label>
-                </span>
-              </p>
-            <button type="submit">
-                Show My Results!
-            </button>
-        </form>
-    </section>
-    <section id="spotify-container" class="section columns is-3">
-        <div id="spotify-search-container" class="column is-one-quarter mr-4">
-            <div id="spotify-response" class="block"></div>
-            <div id="spotify-search-input-container" class="block control">
-                <input type="text" id="spotify-search-input" class="input is-primary is-rounded"
-                    placeholder="Enter Keywords">
-            </div>
-            <div class="columns is-centered">
-                <div class="column"></div>
-                <div class="column is-flex is-flex-direction-column">
-                    <!-- <button class="button is-primary" id="get-auth-token-btn">Get Token</button> -->
-                    <button class="button is-primary mb-3" id="search-button">Search for Playlist</button>
-                    <button class="button is-warning mb-3" id="clear-button">Clear Results</button>
-                </div>
-                <div class="column"></div>
-            </div>
-        </div>
-        <div id="spotify-playlist-container" class="column is-three-quarters">
-            <div id="card-container" class="columns is-multiline"></div>
-        </div>
-    </section>
 
-        <!--footer-->
-        <footer>
-            
-                 <div class="content has-text-centered">
-            <h2> Made by group 6: Moses, Miller, Jonathan, and Lee</h2>
-            <p>&copy; 2022 thegitgudscrubs</p>
-        </div>
-         
-        </footer>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <!-- Insert widget here-->
 
-    <script src="./assets/js/script.js"></script>
+
+
+  <!-- Hero/About the website-->
+  <!-- <section class="hero">
+    <div class="hero-cta p-3">
+      <h2>What we do:</h2>
+      <p>
+        .
+      </p>
+    </div>
+  </section> -->
+
+  <!-- Input for for calories and workout type -->
+  <section class="section columns">
+
+    <div id="form-container" class="p-3 column is-6">
+      <div class="block">
+        <label for="name">Enter Your Name:</label>
+        <input type="text" placeholder="Your Name" name="name" id="user-name" class="input is-primary" />
+      </div>
+      <div class="block">
+        <label for="email">Enter email address:</label>
+        <input type="email" placeholder="Email Address" name="email" id="user-email" class="input is-primary" />
+      </div>
+
+      <div class="block">
+        <label for="phone">Enter a telephone number:</label>
+        <input type="tel" placeholder="Phone Number" name="phone" id="user-phone" class="input is-primary" />
+      </div>
+
+      <div id="workout-choice-header" class="block">
+        <h3>
+          What type of workout are you looking for?
+        </h3>
+      </div>
+
+      <div id="radio-container" class="control columns is-multiline p-3">
+        <label for="" class="radio"></label>
+        <label class="radio column is-2"> <input type="radio" name="trainer-confirm" id="abs-radio" data-id="10"
+            data-name="abs" /> Abs</label>
+        <label class="radio column is-2"> <input type="radio" name="trainer-confirm" id="arms-radio" data-id="8"
+            data-name="arms" /> Arms</label>
+        <label class="radio column is-2"> <input type="radio" name="trainer-confirm" id="back-radio" data-id="12"
+            data-name="back" /> Back</label>
+        <label class="radio column is-2"> <input type="radio" name="trainer-confirm" id="calves-radio" data-id="14"
+            data-name="calves" /> Calves</label>
+        <label class="radio column is-2"> <input type="radio" name="trainer-confirm" id="chest-radio" data-id="11"
+            data-name="chest" /> Chest</label>
+        <label class="radio column is-2"> <input type="radio" name="trainer-confirm" id="legs-radio" data-id="9"
+            data-name="legs" /> Legs</label>
+        <label class="radio column is-2"> <input type="radio" name="trainer-confirm" id="shoulders-radio" data-id="13"
+            data-name="shoulders" /> Shoulders</label>
+
+      </div>
+
+
+      <button id="show-results-btn" class="button is-primary mb-3">
+        Show My Results!
+      </button>
+    </div>
+
+  </section>
+
+  <section id="workout-container" class="section columns is-3">
+
+  </section>
+
+  <section id="spotify-container" class="section columns is-3">
+    <div id="spotify-search-container" class="column is-one-quarter mr-4">
+      <div id="spotify-response" class="block"></div>
+      <div id="spotify-search-input-container" class="block control">
+        <input type="text" id="spotify-search-input" class="input is-primary is-rounded" placeholder="Enter Keywords">
+      </div>
+      <div class="columns is-centered">
+        <div class="column"></div>
+        <div class="column is-flex is-flex-direction-column">
+          <!-- <button class="button is-primary" id="get-auth-token-btn">Get Token</button> -->
+          <button class="button is-primary mb-3" id="search-button">Search for Playlist</button>
+          <button class="button is-warning mb-3" id="clear-button">Clear Results</button>
+        </div>
+        <div class="column"></div>
+      </div>
+    </div>
+    <div id="spotify-playlist-container" class="column is-three-quarters">
+      <div id="card-container" class="columns is-multiline"></div>
+    </div>
+  </section>
+
+  <!--footer-->
+  <footer>
+
+    <div class="content has-text-centered">
+      <h2> Made by group 6: Moses, Miller, Jonathan, and Lee</h2>
+      <p>&copy; 2022 thegitgudscrubs</p>
+    </div>
+
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
