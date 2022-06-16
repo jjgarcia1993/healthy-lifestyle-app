@@ -58,7 +58,10 @@ var createPlaylistCard = (playlistObj) => {
     let cardContentEl = $("<div>").addClass("card-content");
     let descriptionEl = $("<p>").addClass("content").text(playlistObj.description);
     let cardFooterEl = $("<footer>").addClass("card-footer");
-    let playlistLinkEl = $("<a>").addClass("card-footer-item is-size-4").attr("href", playlistObj.external_urls.spotify).text("Link");
+    let playlistLinkEl = $("<a>").addClass("card-footer-item is-size-4")
+        .attr("href", playlistObj.external_urls.spotify)
+        .attr("target","_blank")
+        .text("Link");
 
     cardFooterEl.append(playlistLinkEl);
     cardContentEl.append(descriptionEl);
@@ -80,7 +83,10 @@ var createExerciseCard = (exerciseObj) => {
     let cardContentEl = $("<div>").addClass("card-content");
     let descriptionEl = $("<p>").addClass("content").html(exerciseObj.description);
     let cardFooterEl = $("<footer>").addClass("card-footer");
-    let workoutLinkEl = $("<a>").addClass("card-footer-item is-size-4").attr("href", 'https://wger.de/en/exercise/' + exerciseObj.id + '/view/').text("Link");
+    let workoutLinkEl = $("<a>").addClass("card-footer-item is-size-4")
+    .attr("href", 'https://wger.de/en/exercise/' + exerciseObj.id + '/view/')
+    .attr("target","_blank")
+    .text("Link");
 
     cardFooterEl.append(workoutLinkEl);
     cardContentEl.append(descriptionEl);
