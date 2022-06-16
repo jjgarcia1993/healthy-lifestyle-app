@@ -1,7 +1,7 @@
 ﻿# healthy-lifestyle-app
 
 # Website
-
+https://jjgarcia1993.github.io/healthy-lifestyle-app/
 
 ## USER STORY
 * AS A 'Fitness enthusiast looking to lose weight'
