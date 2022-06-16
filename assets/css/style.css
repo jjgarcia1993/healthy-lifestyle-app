@@ -48,7 +48,7 @@ header h1 {
 }
 
 .hero {
-    text-align: center;
+    /* text-align: center; */
     background-image: url(https://content.active.com/Assets/Active.com+Content+Site+Digital+Assets/Fitness/Articles/Best+Fitness+Gear/people+working+out-carousel.jpg);
 
     background-size: cover;
