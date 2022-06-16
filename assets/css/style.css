@@ -53,14 +53,15 @@ header h1 {
 
     background-size: cover;
     background-position: center;
-    display: flex;
+    height: 700px;
+    /* display: flex;
     justify-content: center;
     flex-wrap: wrap;
     height: 500px;
     color:hsl(0, 0%, 86%);
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     font-size: 50px;
-    font-weight: bold;
+    font-weight: bold; */
     /* font-family */
 }
 .hero h2 {
@@ -86,7 +87,7 @@ header h1 {
     width: 80%;
 }
 .calories-to-burn label {
-
+/* placeholder */
 }
 .calories-to-burn p {
     font-size: 25px;
