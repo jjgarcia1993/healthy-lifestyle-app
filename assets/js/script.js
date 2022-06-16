@@ -55,7 +55,7 @@ var createPlaylistCard = (playlistObj) => {
     let cardHeaderEl = $("<header>").addClass("card-header")
         .append($("<p>").addClass("card-header-title").text(playlistObj.name));
     let cardContentEl = $("<div>").addClass("card-content");
-    let descriptionEl = $("<p>").addClass("content").text(playlistObj.description);
+    let descriptionEl = $("<p>").addClass("content").html(playlistObj.description);
     let cardFooterEl = $("<footer>").addClass("card-footer");
     let playlistLinkEl = $("<a>").addClass("card-footer-item").attr("href", playlistObj.external_urls.spotify).text("Link");
 
@@ -67,15 +67,15 @@ var createPlaylistCard = (playlistObj) => {
 };
 
 
-
-
-
 // Exercise card 
 var createExerciseCard = (exerciseObj) => {
     let cardEl = $("<div>").addClass("column is-one-quarter card m-2");
     let deleteEl = $("<button>").addClass("delete");
     let cardHeaderEl = $("<header>").addClass("card-header")
         .append($("<p>").addClass("card-header-title").text(exerciseObj.name));
+    let cardImageContainerEl = $("<div>").addClass("card-image")
+        // .append($("<figure>").addClass("image is-4by3")
+        //     .append("<img>").addClass("")
     let cardContentEl = $("<div>").addClass("card-content");
     let descriptionEl = $("<p>").addClass("content").html(exerciseObj.description);
     let cardFooterEl = $("<footer>").addClass("card-footer");
@@ -126,6 +126,7 @@ var searchPlaylists = function (searchInput) {
             for (let i = 0; i < 6; i++) {
                 createPlaylistCard(playlists[i]);
             }
+            console.log(playlists)
         });
 };
 
