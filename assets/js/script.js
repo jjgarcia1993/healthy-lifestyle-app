@@ -36,6 +36,8 @@ var getSpotifyAcessToken = function () {
                             .text("Connected to Spotify")
                             .append($("<button>")
                                 .addClass("delete")));
+                        //removes spotifyresponse 3 sec after page load
+                        setTimeout(function(){$("#spotify-response").empty();}, 3000);
                     });
             } else {
                 $("#spotify-response").append($("<div>")
@@ -61,7 +63,7 @@ var createPlaylistCard = (playlistObj) => {
     let playlistLinkEl = $("<a>").addClass("card-footer-item is-size-4")
         .attr("href", playlistObj.external_urls.spotify)
         .attr("target","_blank")
-        .text("Link");
+        .text("Go to Playlist");
 
     cardFooterEl.append(playlistLinkEl);
     cardContentEl.append(descriptionEl);
@@ -86,7 +88,7 @@ var createExerciseCard = (exerciseObj) => {
     let workoutLinkEl = $("<a>").addClass("card-footer-item is-size-4")
     .attr("href", 'https://wger.de/en/exercise/' + exerciseObj.id + '/view/')
     .attr("target","_blank")
-    .text("Link");
+    .text("Go to Workout");
 
     cardFooterEl.append(workoutLinkEl);
     cardContentEl.append(descriptionEl);
